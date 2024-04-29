@@ -1,21 +1,14 @@
+import java.util.*;
+
 class Solution {
     public long solution(long n) {
-        String s = Long.toString(n);
+         String s = Long.toString(n);
         char[] charArray = s.toCharArray();
 
-        for ( int i = 0; i < charArray.length; ++i ){
-            for ( int j = 0; j < charArray.length; ++j){
-                if (charArray[i] > charArray[j]){
-                    char temp = charArray[j];
-                    charArray[j] = charArray[i];
-                    charArray[i] = temp;
-                }
-            }
-        }
-        
+        Arrays.sort(charArray);
         String answer = "";
-        for(char value : charArray){
-            answer += value;
+        for ( int i = charArray.length - 1; i >= 0; --i ){
+            answer += charArray[i];
         }
         return Long.parseLong(answer);
     }
