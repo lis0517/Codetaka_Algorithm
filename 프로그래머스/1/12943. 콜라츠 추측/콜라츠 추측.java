@@ -7,12 +7,7 @@ class Solution {
         if ( num == 1 )
             return count;
 
-        if ( num % 2 == 0 ){
-            count++;
-            return solution(num/2);
-        }else{
-            count++;
-            return solution(num * 3 + 1);
-        }
+        count++;
+        return num % 2 == 0 ? solution(num/2) : solution(num * 3 + 1);
     }
 }
